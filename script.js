@@ -17,13 +17,14 @@ $(document).ready(function(){
 
     // slide-up script
     $('.scroll-up-btn').click(function(){
-        $('html').animate({scrollTop: 0});
-        // removing smooth scroll on slide-up button click
-        $('html').css("scrollBehavior", "auto");
+        $('html, body').animate({scrollTop: 0}, 'slow', 'swing', function(){
+            // restoring smooth scroll behavior after animation completes
+            $('html').css("scrollBehavior", "smooth");
+        });
     });
 
     $('.navbar .menu li a').click(function(){
-        // applying again smooth scroll on menu items click
+        // applying smooth scroll on menu items click
         $('html').css("scrollBehavior", "smooth");
     });
 
@@ -35,18 +36,18 @@ $(document).ready(function(){
 
     // typing text animation script
     var typed = new Typed(".typing", {
-        strings: ["Developer", "Blogger", "Designer", "Freelancer","Data Analyst"],
+        strings: ["YouTuber", "Developer", "Blogger", "Designer", "Freelancer"],
         typeSpeed: 100,
         backSpeed: 60,
         loop: true
     });
 
-    // var typed = new Typed(".typing-2", {
-    //     strings: ["Developer", "Blogger", "Designer", "Freelancer","Data Analyst"],
-    //     typeSpeed: 100,
-    //     backSpeed: 60,
-    //     loop: true
-    // });
+    var typed = new Typed(".typing-2", {
+        strings: ["YouTuber", "Developer", "Blogger", "Designer", "Freelancer"],
+        typeSpeed: 100,
+        backSpeed: 60,
+        loop: true
+    });
 
     // owl carousel script
     $('.carousel').owlCarousel({
